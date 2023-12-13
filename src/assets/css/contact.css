@@ -1,0 +1,61 @@
+.contact_container {
+    margin: 0 auto;
+    width: 75%;
+}
+
+.header_contact h3{
+    color: var(--text-primary);
+    font-size: 50px;
+    font-family: 'Just Another Hand', cursive;
+}
+
+.header_contact hr{
+    border: 1px solid var(--text-primary);
+    background: var(--text-primary);
+    margin-top: -5%;
+}
+
+.form_container {
+    font-family: 'Just Another Hand', cursive;
+}
+
+.form_container span{
+    font-size: 34px;
+    display: block;
+}
+
+.form_container input{
+    width: 90%;
+    margin-bottom: 10px;
+    height: 5vh;
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 5px;
+}
+
+.form_container textarea{
+    width: 90%;
+    margin-bottom: 30px;
+    height: 20vh;
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 5px;
+}
+
+.form_container button{
+    display: block;
+    width: 25%;
+    height: 5vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.form_container button:hover{
+    transform: scale(1.1);
+    transition: .5s;
+}

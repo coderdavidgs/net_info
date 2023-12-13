@@ -14,7 +14,7 @@
 
         <router-link to="/result" class="nav-text">Tests</router-link>
 
-        <router-link to="/" class="nav-text">Contact</router-link>
+        <router-link to="/contact" class="nav-text">Contact</router-link>
       </div>
     </nav>
   <router-view/>
