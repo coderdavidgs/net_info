@@ -1,0 +1,44 @@
+.result_container {
+ width: 75%; 
+ margin: 0 auto;
+ font-family: 'Just Another Hand', cursive;
+}
+
+.result_container h3 {
+    color: var(--bg-success);
+    font-size: 70px;
+    text-align: center;
+}
+
+.result_container hr {
+    margin-top: -70px;
+    background-color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+}
+
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.first_column_results {
+    width: 50%;
+}
+
+.second_column_results {
+    width: 50%;
+}
+
+.item_result {
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 34px;
+}
+
+.item_result img{
+    width: 50px;
+    margin-right: 20%;
+}
