@@ -14,7 +14,7 @@
         ...and more
       </div>
       <div class="btn-start">
-        <router-link to="/">
+        <router-link to="/result">
           Start <img src="@/assets/imgs/arrow.png" alt="start">
         </router-link>
       </div>
