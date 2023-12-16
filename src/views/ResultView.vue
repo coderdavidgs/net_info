@@ -3,16 +3,19 @@
     <div class="result_container">
         <h3>Result</h3>
         <hr />
-        <div class="results">
-            <div class="first_column_results">
-                <ResultItem FileImg="fast.png" ResultText="Download: 100mps(fast)"/>
-                <ResultItem FileImg="ip.png" ResultText="IP Address: 192.168.105.5"/>
-            </div>
-
-            <div class="second_column_results">
-                <ResultItem FileImg="security.png" ResultText="Protected With HTTPS"/>
-                <ResultItem FileImg="link.png" ResultText="Ping: 60ms"/>
-            </div>
+        <div class="results" v-if="loadingDataResult">
+                <div class="first_column_results">
+                    <ResultItem FileImg="fast.png" :ResultText="`Download velocity: ${download} (average)`"/>
+                    <ResultItem FileImg="ip.png" :ResultText="`IP Address: ${ip} (public)`"/>
+                </div>
+    
+                <div class="second_column_results">
+                    <ResultItem FileImg="security.png" :ResultText="protocol"/>
+                    <ResultItem FileImg="link.png" :ResultText="`Ping: ${ping}`"/>
+                </div>
+        </div>
+        <div v-else class="loading">
+            <img src="@/assets/imgs/loading.gif" alt="loading" />
         </div>
     </div>
 </template>
@@ -34,6 +37,15 @@
         
         components: {
             ResultItem,
+        },
+
+        computed: {
+           loadingDataResult() {
+            if(this.ip == '' && this.download == '' && this.ping == '' && this.protocol == ''){
+                return false;
+            }
+            return true;
+           }, 
         },
 
         data() {
