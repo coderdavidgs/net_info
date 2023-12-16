@@ -35,7 +35,7 @@ export const getPing = (url: string): any => {
 
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
+            if (xhr.readyState == 4) {
                 const end = new Date().getTime();
                 const pingTime = end - start;
                 resolve(pingTime);
@@ -49,4 +49,12 @@ export const getPing = (url: string): any => {
         xhr.open('GET', url, true);
         xhr.send();
     });
+};
+
+export const verifyIfUseHTTPS = (): string => {
+    if(location.protocol.includes('https')){
+        return 'Protected With HTTPS';
+    } else {
+        return 'Desprotected With HTTP';
+    }
 };

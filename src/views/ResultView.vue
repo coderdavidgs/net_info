@@ -1,3 +1,4 @@
+<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <template>
     <div class="result_container">
         <h3>Result</h3>
@@ -18,9 +19,17 @@
 
 <script lang="ts">
     import ResultItem from '@/components/ResultItem.vue';
-    import { getIp, getDownloadVelocity, getPing } from '@/services/connectionData';
+    import { getIp, getDownloadVelocity, getPing, verifyIfUseHTTPS } from '@/services/connectionData';
+    import { defineComponent } from 'vue';
 
-    export default {
+    type DataPropertieComponent = {
+        ip: string;
+        download: string;
+        ping: string;
+        protocol: string;
+    };
+
+    export default defineComponent ({
         name: 'ResultView',
         
         components: {
@@ -32,28 +41,31 @@
                 ip: '',
                 download: '',
                 ping: '',
-            }
+                protocol: '',
+            } as DataPropertieComponent;
         },
 
         async mounted() {
             this.ip = await getIp();
             this.download = await getDownloadVelocity();
             this.measurePing();
+            this.protocol = verifyIfUseHTTPS();
         },
 
         methods: {
             async measurePing() {
-                const urlForPing = 'google.com';
+                const urlForPing = 'https://www.google.com.br';
 
                 try {
                     const pingTime = await getPing(urlForPing);
                     this.ping = `${pingTime}ms`;
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 } catch (error: any) {
                     console.error(`Error in try to measure ping: ${error.message}`)
                 }
             },
         },
-    }
+    })
         
 </script>
 
