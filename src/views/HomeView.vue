@@ -4,7 +4,9 @@
       <img src="@/assets/imgs/homeImage.png" alt="welcome">
     </div>
     <div class="items-home">
+      
       <h2>You'll know:</h2>
+
       <div class="btns-items-home">
         <ul>
           <li>Public IP</li>
@@ -13,11 +15,13 @@
         </ul>
         ...and more
       </div>
+
       <div class="btn-start">
         <router-link to="/result">
           Start <img src="@/assets/imgs/arrow.png" alt="start">
         </router-link>
       </div>
+
     </div>
   </div>
 </template>
