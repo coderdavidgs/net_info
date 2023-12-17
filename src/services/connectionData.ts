@@ -55,6 +55,6 @@ export const verifyIfUseHTTPS = (): string => {
     if(location.protocol.includes('https')){
         return 'Protected With HTTPS';
     } else {
-        return 'Desprotected With HTTP';
+        return 'Desprotected Without HTTPS';
     }
 };
