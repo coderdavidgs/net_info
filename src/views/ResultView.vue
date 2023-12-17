@@ -24,13 +24,7 @@
     import ResultItem from '@/components/ResultItem.vue';
     import { getIp, getDownloadVelocity, getPing, verifyIfUseHTTPS } from '@/services/connectionData';
     import { defineComponent } from 'vue';
-
-    type DataPropertieComponent = {
-        ip: string;
-        download: string;
-        ping: string;
-        protocol: string;
-    };
+    import { ResultData } from '@/types/resultDataType';
 
     export default defineComponent ({
         name: 'ResultView',
@@ -54,7 +48,7 @@
                 download: '',
                 ping: '',
                 protocol: '',
-            } as DataPropertieComponent;
+            } as ResultData;
         },
 
         async mounted() {
