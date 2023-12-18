@@ -59,3 +59,7 @@
     transform: scale(1.1);
     transition: .5s;
 }
+
+.message_send {
+    font-size: 36px;
+}

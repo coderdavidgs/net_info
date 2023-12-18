@@ -16,6 +16,11 @@
         name: 'ContactView',
         components: {
             ContactForm,
+        },
+        data: () => {
+            return {
+                send: true,
+            }
         }
     }
 </script>
